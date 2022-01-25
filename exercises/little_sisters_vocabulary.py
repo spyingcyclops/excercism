@@ -2,18 +2,16 @@ def add_prefix_un(word):
     return "un" + word
 
 
-def make_word_groups(words):
-    prefix = words.pop(0)
+def make_word_groups(vocab_words):
+    prefix = vocab_words.pop(0)
     longwords = [prefix]
-    for i in words:
+    for i in vocab_words:
         longwords.append(prefix + i)
         x = " :: ".join(longwords)
-    return prefix + " :: " + x
-
-
-# for i in words:
-#     (words[0] + " :: ").join(words)
-#     return(words)
+    print(prefix + " :: " + x)
+    # for i in vocab_words:
+    #     str(vocab_words[0] + " :: ").join(vocab_words)
+    #     print(vocab_words)
 
 
 def remove_suffix_ness(word):
@@ -35,8 +33,8 @@ def adjective_to_verb(sentence, index):
 
 
 # 1
-print("\n1. Add a prefix to a word")
-add_prefix_un("happy")
+# print("\n1. Add a prefix to a word")
+# add_prefix_un("happy")
 
 # 2
 print("\n2. Add prefixes to word groups")
@@ -59,18 +57,18 @@ make_word_groups(
     ]
 )
 
-# 3
-print("\n3. Remove a suffix from a word")
-remove_suffix_ness("heaviness")
-remove_suffix_ness("sadness")
-remove_suffix_ness("softness")
-remove_suffix_ness("crabbiness")
-remove_suffix_ness("lightness")
-remove_suffix_ness("artiness")
-remove_suffix_ness("edginess")
+# # 3
+# print("\n3. Remove a suffix from a word")
+# remove_suffix_ness("heaviness")
+# remove_suffix_ness("sadness")
+# remove_suffix_ness("softness")
+# remove_suffix_ness("crabbiness")
+# remove_suffix_ness("lightness")
+# remove_suffix_ness("artiness")
+# remove_suffix_ness("edginess")
 
 
-# 4
-print("\n4. Extract and transform a word")
-adjective_to_verb("I need to make that bright.", -1)
-adjective_to_verb("Charles made weak crying noises.", 2)
+# # 4
+# print("\n4. Extract and transform a word")
+# adjective_to_verb("I need to make that bright.", -1)
+# adjective_to_verb("Charles made weak crying noises.", 2)
