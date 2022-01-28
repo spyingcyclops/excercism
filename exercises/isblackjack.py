@@ -18,16 +18,15 @@ def is_blackjack(card_one, card_two):
     #         return True
 
     sum = 0
-    hand = [card_one, card_two]
-    for i in hand:
-        if i == "A":
-            sum += 11
-            hand.remove(i)
-            print(hand)
-        if i in ["10", "J", "Q", "K"]:
-            hand.remove(i)
-            sum += 10
-    print(sum)
+    if card_one == "A":
+        sum += 11
+    if card_one in ["10", "J", "Q", "K"]:
+        sum += 10
+    if card_two == "A":
+        sum += 11
+    if card_two in ["10", "J", "Q", "K"]:
+        sum += 10
+
     return sum == 21
 
 

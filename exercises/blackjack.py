@@ -65,16 +65,15 @@ def is_blackjack(card_one, card_two):
     :return: bool - if the hand is a blackjack (two cards worth 21).
     """
     sum = 0
-    hand = [card_one, card_two]
-    for i in hand:
-        if i == "A":
-            sum += 11
-            hand.remove(i)
-            print(hand)
-        if i in ["10", "J", "Q", "K"]:
-            hand.remove(i)
-            sum += 10
-    print(sum)
+    if card_one == "A":
+        sum += 11
+    if card_one in ["10", "J", "Q", "K"]:
+        sum += 10
+    if card_two == "A":
+        sum += 11
+    if card_two in ["10", "J", "Q", "K"]:
+        sum += 10
+
     return sum == 21
 
 
@@ -84,8 +83,9 @@ def can_split_pairs(card_one, card_two):
     :param card_one, card_two: str - cards dealt.
     :return: bool - if the hand can be split into two pairs (i.e. cards are of the same value).
     """
-
-    pass
+    v1 = value_of_card(card_one)
+    v2 = value_of_card(card_two)
+    return v1 == v2
 
 
 def can_double_down(card_one, card_two):
@@ -94,5 +94,6 @@ def can_double_down(card_one, card_two):
     :param card_one, card_two: str - first and second cards in hand.
     :return: bool - if the hand can be doubled down (i.e. totals 9, 10 or 11 points).
     """
-
-    pass
+    v1 = value_of_card(card_one)
+    v2 = value_of_card(card_two)
+    return 8 < (v1 + v2) < 12
